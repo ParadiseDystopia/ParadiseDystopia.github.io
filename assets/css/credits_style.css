@@ -1,0 +1,199 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #0e0e10;
+    color: #ffffff;
+    font-family: 'Segoe UI';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  
+header {
+    width: 100%;
+    background-color: #26263b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #26263b;
+    z-index: 10;
+  }
+  
+  .navbar .logo {
+    width: 45px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  .nav-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-tabs li {
+    display: block;
+  }
+  
+  .nav-tabs .tab-link {
+    color: #ffffff80;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .nav-tabs .tab-link:hover {
+    color: #ffffff;
+    background-color: #6a6ada;
+  }
+  
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: linear-gradient(125deg, #19191a 0%, #171529 100%);
+    font-family: Verdana, sans-serif; 
+}
+
+header {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #fff; 
+}
+
+.image-container {
+    display: flex;
+    gap: 20px;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.box-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent 40%, yellow),
+                linear-gradient(#262626, #141414);
+    animation: rotate 1.5s linear infinite;
+    z-index: 1;
+}
+
+.box:before,
+.box:after {
+    content: " ";
+    position: absolute;
+    inset: 8px;
+    background: linear-gradient(#161616, #262626);
+    border-radius: inherit;
+    z-index: 1; 
+}
+
+.box:before {
+    background: linear-gradient(45deg, transparent, transparent 40%, yellow);
+    filter: blur(32px);
+}
+
+.box-container img {
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
+    object-fit: cover; 
+    z-index: 2;
+}
+
+.text-content {
+    margin-top: 10px;
+    color: #fff;
+    z-index: 2;
+}
+
+.text-content h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.text-content p {
+    margin: 0;
+    color: #ccc;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+h2.hue-text {
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    color: #4568DC;
+    background: linear-gradient(45deg, #4568DC, #B06AB3);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 5s linear infinite;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
