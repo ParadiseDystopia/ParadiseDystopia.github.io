@@ -1,4 +1,4 @@
-/* Reset and basic styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +10,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #141420;
     color: #999AA1;
   }
   
-  /* Header */
   header {
     background-color: #26263b;
     padding: 1rem;
@@ -24,7 +22,7 @@
   
   .logo {
     display: flex;
-    align-items: center; /* Aligns items (image and text) vertically in the center */
+    align-items: center;
   }
   
   .logo img {
@@ -34,17 +32,14 @@
   
   .logo h1 {
     font-size: 1.5rem;
-    margin: 0; /* Ensure there's no default margin */
+    margin: 0;
   }
   
-  
-  /* Container */
   .container {
     display: flex;
     flex: 1;
   }
   
-  /* Sidebar */
   .sidebar {
     width: 250px;
     background-color: #141420;
@@ -73,19 +68,21 @@
   }
   
   .sidebar nav ul li a.active {
-    background-color: #6a6ada; /* Matches the hover color */
-    color: #fff;               /* Keeps the text white */
+    background-color: #6a6ada; 
+    color: #fff;              
   }
 
-  
-  /* Content Area */
+
   .content {
     padding: 2rem;
     flex: 1;
-    background-color: rgb(20, 20, 29);
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    background-color: #14141d;
+  background-color: #DFDBE5;
+background-color: #14141d;
+background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  
+
+
   .content h2 {
     margin-bottom: 1rem;
   }
@@ -109,24 +106,24 @@
   background-color: #2c2c44;
   padding: 15px 20px;
   border-radius: 8px;
-  box-sizing: border-box; /* Include padding in width calculations */
-  width: 100%; /* Ensure the item takes full width of its container */
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .info {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-grow: 1; /* Allow .info to grow and take available space */
+  flex-grow: 1;
 }
 
 .icon {
-  width: 40px; /* Adjust the size of the icons */
+  width: 40px;
   height: 40px;
 }
 
 .name {
-  font-size: 18px; /* Make the text larger */
+  font-size: 18px;
   color: #e0e0e0;
 }
 
