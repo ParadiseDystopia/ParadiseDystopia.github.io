@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/images/web/logo.png" type="image/x-icon"> 
+  <title>CS:GO Configs</title>
+  <link rel="stylesheet" href="/assets/css/style_2.css">
+  <script>
+    const configWorkshop = {
+      legacy: [
+        { name: "Aimware", file: "/assets/workshop/configs/csgo/aimware.rar", icon: "aimware.png" },
+        { name: "Ev0lve", file: "/assets/workshop/configs/csgo/ev0lve.rar", icon: "Ev0lve.png" },
+        { name: "Fatality", file: "/assets/workshop/configs/csgo/fatality.rar", icon: "fatality.png" },
+        { name: "Gamesense", file: "/assets/workshop/configs/csgo/gamesense.rar", icon: "gamesense.png" },
+        { name: "Monolith", file: "/assets/workshop/configs/csgo/monolith.rar", icon: "monolith.png" },
+        { name: "Onetap v3", file: "/assets/workshop/configs/csgo/otc3.rar", icon: "Onetap.png" },
+        { name: "Pandora", file: "/assets/workshop/configs/csgo/pandora.rar", icon: "Pandora.png" },
+        { name: "Plaguecheat", file: "/assets/workshop/configs/csgo/plaguecheat.rar", icon: "plague.png" },
+        { name: "Primordial", file: "/assets/workshop/configs/csgo/primordial.rar", icon: "primordial.png" }
+      ],
+      cs2018: [
+        { name: "Dopium", file: "/assets/workshop/configs/csgo/2k18/Dopium.rar", icon: "dopium.png" },
+        { name: "Monarch", file: "/assets/workshop/configs/csgo/2k18/Monarch.rar", icon: "paste.png" },
+        { name: "Onetap", file: "/assets/workshop/configs/csgo/2k18/Onetap_v2_Legacy.rar", icon: "Onetap.png" },
+        { name: "Pandora", file: "/assets/workshop/configs/csgo/2k18/pandora_legacy.rar", icon: "Pandora.png" },
+        { name: "Supremacy", file: "/assets/workshop/configs/csgo/2k18/Supremacy.rar", icon: "supremacy.png" }
+      ]
+    };
+
+    function loadConfigs(configType) {
+      document.querySelectorAll('.category li a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-config') === configType) {
+          link.classList.add('active');
+        }
+      });
+
+      const title = configType === 'legacy' ? 'CS:GO 2023 Configs' : 'CS:GO 2018 Configs';
+      document.title = title;
+      document.querySelector('header h1').textContent = title;
+
+      const container = document.querySelector('.subscription-list');
+      container.innerHTML = '';
+      
+      configWorkshop[configType].forEach(config => {
+        const item = document.createElement('div');
+        item.className = 'subscription-item';
+        item.innerHTML = `
+          <div class="info">
+            <img src="/assets/images/cheat_icons/${config.icon}" class="icon">
+            <span class="name">${config.name}</span>
+          </div>
+          <div class="actions">
+            <a href="${config.file}" class="extend-button" download="${config.file.split('/').pop()}">
+              <i class="fas fa-download"></i> Download
+            </a>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadConfigs('legacy');
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/images/icons/hvh_icon.png" alt="Logo">
+      <h1>CS:GO Configs</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <div class="category">
+          <ul>
+            <li><a href="#" data-config="legacy" onclick="loadConfigs('legacy')" class="active">CS:GO 2023</a></li>
+            <li><a href="#" data-config="cs2018" onclick="loadConfigs('cs2018')">CS:GO 2018</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="subscription-list">
+      </div>
+    </main>  
+  </div>
+</body>
+</html>

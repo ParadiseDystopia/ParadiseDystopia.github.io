@@ -1,5 +1,5 @@
 
-const textOptions = ["CONFIGS?", "SCRIPTS?", "VISUALS"];
+const textOptions = ["SCRIPTS?","CONFIGS?", "SCRIPTS?"];
 const textOptions2 = ["CSGO", "CS2"];
 
 const scriptHighlightElement = document.getElementById('dynamic-highlight');

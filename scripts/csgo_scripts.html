@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/images/web/logo.png" type="image/x-icon"> 
+  <title>Workshop scripts</title>
+  <link rel="stylesheet" href="/assets/css/style_2.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/images/web/logo.png" alt="Logo">
+      <h1>Workshop scripts</h1>
+    </div>
+  </header>
+
+  <script>
+
+   const categoryIcons = {
+        aimware: "aimware.png",
+        ev0lve: "ev0lve.png",
+        fatality: "fatality.png",
+        gamesense: "gamesense.png",
+        neverlose: "neverlose.png",
+        onetap: "onetap.png",
+        pandora: "pandora.png",
+        primordial: "primordial.png"
+    };
+
+    const WorkshopScripts = {
+    aimware: [
+        { name: "Aspect ratio", file: "/assets/workshop/scripts/aimware/aspectratio.lua" },
+        { name: "Bleeding", file: "/assets/workshop/scripts/aimware/[ Bleeding ].lua" },
+        { name: "Evacord", file: "/assets/workshop/scripts/aimware/EvaCord_PM.lua" },
+        { name: "Glow wireframe chams", file: "/assets/workshop/scripts/aimware/glow_wireframe.lua" }
+
+      ],
+      ev0lve: [
+        { name: "Defensive aa", file: "/assets/workshop/scripts/ev0lve/deffensive_aa.lua" },
+        { name: "Damage override", file: "/assets/workshop/scripts/ev0lve/damage_override.lua" },
+        { name: "Grenade helper", file: "/assets/workshop/scripts/ev0lve/Grenade_helper.lua" },
+        { name: "Manual aa", file: "/assets/workshop/scripts/ev0lve/manual_aa.lua" },
+        { name: "Menu gif", file: "/assets/workshop/scripts/ev0lve/menu_gif.lua" },
+      ],
+      fatality: [
+        { name: "Aspect ratio", file: "/assets/workshop/scripts/fatality/aspect_ratio.lua" },
+        { name: "Weapon In Scope", file: "/assets/workshop/scripts/fatality/weapon_in_scope.lua" }
+      ],
+      gamesense: [
+        { name: "Lua Pack", file: "https://github.com/ParadiseDystopia/ParadiseDystopia.github.io/tree/main/assets/workshop/scripts/gamesense" }
+      ],
+      neverlose: [
+        { name: "Astral", file: "/assets/workshop/scripts/neverlose/Astral.lua"},
+        { name: "Asylum.pink", file: "/assets/workshop/scripts/neverlose/asylumpink.lua" },
+        { name: "Bluhgang", file: "/assets/workshop/scripts/neverlose/bluhgang.lua"},
+        { name: "Chimera", file: "/assets/workshop/scripts/neverlose/chimera.lua" },
+        { name: "Grenade helper", file: "/assets/workshop/scripts/grenade_helper.lua"},
+        { name: "Luasense beta", file: "/assets/workshop/scripts/neverlose/luasense_beta.lua" },
+        { name: "Mytools alpha", file: "/assets/workshop/scripts/MyTools_alpha.lua"},
+        { name: "Space.codes alpha", file: "/assets/workshop/scripts/neverlose/space.codes_alpha.lua" },
+        { name: "Solar.tech", file: "/assets/workshop/scripts/neverlose/solar-tech.lua" },
+        { name: "Testarossa", file: "/assets/workshop/scripts/neverlose/testarossa.lua" }
+      ],
+      onetap: [
+        { name: "Soon", file: "DOWNLOAD HERE" },
+      ],
+       pandora: [
+        { name: "Anti-defensive", file: "/assets/workshop/scripts/pandora/antixploit.lua" },
+        { name: "Left hand knife", file: "/assets/workshop/scripts/pandora/knife_left.lua" },
+        { name: "Sensitivity fix", file: "/assets/workshop/scripts/pandora/sensitivity_fix.lua" },
+        { name: "Slowed-down indicator", file: "/assets/workshop/scripts/pandora/slowed_down_ind.lua" },
+        { name: "Thirdperson distance", file: "/assets/workshop/scripts/pandora/third_dist.lua" },
+        { name: "Viewmodel changer", file: "/assets/workshop/scripts/pandora/viewmodel.lua" },
+        { name: "Wall penetration indicator", file: "/assets/workshop/scripts/pandora/pen_vis.lua" }
+      ],
+     
+        primordial: [
+        { name: "Acatel indicators", file: "/assets/workshop/scripts/primordial/Acatel Indicators.lua" },
+        { name: "Discord rich presence", file: "/assets/workshop/scripts/primordial/Discord Rich Presence.lua" },
+        { name: "Distortion aa", file: "/assets/workshop/scripts/primordial/Distortion lua because funny!.lua" },
+        { name: "Genshin impact paimon", file: "/assets/workshop/scripts/primordial/paimon.rar" },
+        { name: "Gris healthbar", file: "/assets/workshop/scripts/primordial/gris.rar" },
+        { name: "Metasett", file: "/assets/workshop/scripts/primordial/metasett.lua" },
+        { name: "Model changer", file: "/assets/workshop/scripts/primordial/primordial_model_changer.lua" },
+        { name: "Leg breaker", file: "/assets/workshop/scripts/primordial/Leg anim.lua" },
+        { name: "Primordial style indicators", file: "/assets/workshop/scripts/primordial style indicators.lua" },
+        { name: "Grenade helper", file: "/assets/workshop/scripts/Recode Helper v1-2-1.lua" },
+        { name: "Sparkle auto peek effect", file: "/assets/workshop/scripts/primordial/old_primo_autopeek.lua" }
+      ]
+    };
+
+    function showCategory(category) {
+        document.querySelectorAll('.category li a').forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('data-category') === category) a.classList.add('active');
+        });
+
+        const content = document.querySelector('.content');
+        content.innerHTML = '<div class="subscription-list"></div>';
+        const list = content.querySelector('.subscription-list');
+
+        WorkshopScripts[category].forEach(script => {
+            const item = document.createElement('div');
+            item.className = 'subscription-item';
+            item.innerHTML = `
+                <div class="info">
+                    <img src="/assets/images/cheat_icons/${categoryIcons[category]}" class="icon">
+                    <span class="name">${script.name}</span>
+                </div>
+                <div class="actions">
+                    <a href="${script.file}" class="extend-button" download="${script.file.split('/').pop()}">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            `;
+            list.appendChild(item);
+        });
+    }
+  </script>
+</head>
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <div class="category">
+          <ul>
+            <li><a href="#aimware" data-category="aimware" onclick="showCategory('aimware')" class="active">Aimware</a></li>
+            <li><a href="#ev0lve" data-category="ev0lve" onclick="showCategory('ev0lve')">Ev0lve</a></li>
+            <li><a href="#fatality" data-category="fatality" onclick="showCategory('fatality')">Fatality</a></li>
+            <li><a href="#gamesense" data-category="gamesense" onclick="showCategory('gamesense')">Gamesense</a></li>
+            <li><a href="#neverlose" data-category="neverlose" onclick="showCategory('neverlose')">Neverlose</a></li>
+            <li><a href="#onetap3" data-category="onetap" onclick="showCategory('onetap')">Onetap v3</a></li>
+            <li><a href="#pandora" data-category="pandora" onclick="showCategory('pandora')">Pandora</a></li>
+              <li><a href="#primordial" data-category="primordial" onclick="showCategory('primordial')">Primordial</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="subscription-list">
+      </div>
+    </main>  
+  </div>
+
+  <script>
+    showCategory('aimware');
+  </script>
+</body>
+</html>
