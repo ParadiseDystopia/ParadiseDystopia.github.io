@@ -31,52 +31,7 @@ header {
     z-index: 10;
 }
 
-.navbar {
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #26263b;
-    z-index: 10;
-  }
-  
-  .navbar .logo {
-    width: 45px;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 10px;
-  }
-  
-  
-  .nav-tabs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .nav-tabs li {
-    display: block;
-  }
-  
-  .nav-tabs .tab-link {
-    color: #ffffff80;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-transform: uppercase;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    border-radius: 5px;
-  }
-  
-  .nav-tabs .tab-link:hover {
-    color: #ffffff;
-    background-color: #6a6ada;
-  }
+
   
 
 body {
