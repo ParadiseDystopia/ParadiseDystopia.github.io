@@ -1,89 +1,135 @@
-<div class="games">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cheat Downloads</title>
+  <link rel="stylesheet" href="/assets/css/cheat_style.css" />
+  <style>
+   body {
+  margin: 0;
+  background: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.banner_wrapper {
+  width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.banner {
+  height: 200px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card__wrapper {
+  padding: 0; /* remove the spacing between image and card */
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #252525;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 12px 12px; /* Only round the bottom corners */
+}
+
+.card__info span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #2d80ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
     <div class="banner_wrapper">
-        <link rel="stylesheet" href="/assets/css/cheat_style.css">
-        <div class="banner">
-            <img src="/assets/images/cheat/placeholder.png" alt="csgo_banner" class="banner__image">
+      <div class="banner">
+        <img src="/assets/images/cheat_showcase/cs2023_pandora.png"/>
+      </div>
+      <div class="card__wrapper">
+        <div class="card">
+          <div class="card__info">
+            <span>Pandora</span>
+          </div>
+          <a href="/csgo">
+            <button>Download</button>
+          </a>
         </div>
-        <div class="card__wrapper">
-            <div class="card">
-                <div class="card__info">
-                    <div>
-                        <span>Gamesense</span>
-                    </div>
-                </div>
-                <a href="/csgo">
-                  <button>Download</button>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
+
     <div class="banner_wrapper">
-        <div class="banner">
-             <img src="/assets/images/cheat/placeholder.png" alt="csgo_banner" class="banner__image">
+      <div class="banner">
+        <img src="/assets/images/cheat_showcase/cs2023_primordial.png"/>
+      </div>
+      <div class="card__wrapper">
+        <div class="card">
+          <div class="card__info">
+            <span>Primordial.dev</span>
+          </div>
+          <a href="DW">
+            <button>Download</button>
+          </a>
         </div>
-        <div class="card__wrapper">
-            <div class="card">
-                <div class="card__info">
-                    <div>
-                        <span>Onetap</span>
-                    </div>
-                </div>
-                <a href="/cs2">
-                    <button>Download</button>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
+
+
     <div class="banner_wrapper">
-        <div class="banner">
-            <img src="/assets/images/cheat/placeholder.png" alt="csgo_banner" class="banner__image">
+      <div class="banner">
+        <img src="/assets/images/cheat/placeholder.png"/>
+      </div>
+      <div class="card__wrapper">
+        <div class="card">
+          <div class="card__info">
+            <span>Gamesense</span>
+          </div>
+          <a href="DW">
+            <button>Download</button>
+          </a>
         </div>
-        <div class="card__wrapper">
-            <div class="card">
-                <div class="card__info">
-                    <div>
-                        <span>Primordial</span>
-                    </div>
-                </div>
-                <a href="/tf2">
-                    <button>Download</button>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
-        <div class="banner_wrapper">
-        <div class="banner">
-            <img src="/assets/images/cheat/placeholder.png" alt="csgo_banner" class="banner__image">
-        </div>
-        <div class="card__wrapper">
-            <div class="card">
-                <div class="card__info">
-                    <div>
-                        <span>Primordial</span>
-                    </div>
-                </div>
-                <a href="/tf2">
-                    <button>Download</button>
-                </a>
-            </div>
-        </div>
-    </div>
-        <div class="banner_wrapper">
-        <div class="banner">
-            <img src="/assets/images/cheat/placeholder.png" alt="csgo_banner" class="banner__image">
-        </div>
-        <div class="card__wrapper">
-            <div class="card">
-                <div class="card__info">
-                    <div>
-                        <span>Primordial</span>
-                    </div>
-                </div>
-                <a href="/tf2">
-                    <button>Download</button>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-</div>
+
+  </div>
+
+</body>
+</html>
